@@ -1,4 +1,4 @@
-# Every manifest must be valid JSON in the generator's format, match Scoop's
+# Every manifest (the *.json files at the top level) must be valid JSON in the generator's format, match Scoop's
 # schema, and point at downloads whose sha256 matches the recorded hash.
 name: check
 
@@ -22,7 +22,7 @@ jobs:
 
       - name: valid json, 4-space indent, trailing newline
         run: |
-          git ls-files '*.json' | python3 -c '
+          git ls-files ':(glob)*.json' | python3 -c '
           import json, sys
           bad = 0
           for path in sys.stdin.read().split():
@@ -41,18 +41,19 @@ jobs:
           sys.exit(bad)
           '
 
-      # Scoop's own schema, pinned to a commit so a change upstream can't
-      # break this check without a pull request here.
+      # Scoop's own schema, copied into .github/schema/ from ScoopInstaller/Scoop
+      # at e6aa3b366bdee8ed138c1e0f7b85192ebdd35d0f (Unlicense or MIT), so the
+      # check never fetches it and only changes through a pull request here.
       - name: scoop schema
         run: |
-          git ls-files -z '*.json' | xargs -0 uvx check-jsonschema@0.38.2 \
-            --schemafile https://raw.githubusercontent.com/ScoopInstaller/Scoop/e6aa3b366bdee8ed138c1e0f7b85192ebdd35d0f/schema.json
+          git ls-files -z ':(glob)*.json' | xargs -0 uvx check-jsonschema@0.38.2 \
+            --schemafile .github/schema/scoop-manifest.json
 
       - name: downloads exist and hashes match
         run: |
           set -eu
           fail=0
-          for f in $(git ls-files '*.json'); do
+          for f in $(git ls-files ':(glob)*.json'); do
             jq -r '[., (.architecture // {} | .[])] | .[]
               | select(.url != null)
               | [(.url | if type == "array" then .[] else . end)] as $u

@@ -5,4 +5,4 @@ here when every box in it is ticked.
 
 ### Phase 1: repository hygiene
 
-- [ ] `plans/02-repo-hygiene.md` - Dependabot and a security policy.
+- [x] `plans/02-repo-hygiene.md` - Dependabot and a security policy.

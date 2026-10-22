@@ -84,24 +84,24 @@ shows the Dependabot config as valid on the PR.
 
 ### Phase 1: topics
 
-- [ ] The repository topics set to `json-schema`, `manifests`,
+- [x] The repository topics set to `json-schema`, `manifests`,
   `package-manager`, `scoop`, `scoop-bucket`, `windows` with
   `gh repo edit`; check: `gh repo view --json repositoryTopics` lists them.
 
 ### Phase 2: Dependabot
 
-- [ ] `.github/dependabot.yml` lands with one `github-actions` entry;
+- [x] `.github/dependabot.yml` lands with one `github-actions` entry;
   check: the file parses with `yaml.safe_load`.
 
 ### Phase 3: security policy
 
-- [ ] `SECURITY.md` lands with supported versions, the private reporting
+- [x] `SECURITY.md` lands with supported versions, the private reporting
   link, what happens next and the scope (the manifests and `check.yml`);
   check: every link in it points at this repository.
 
 ### Phase 4: open the PR
 
-- [ ] The branch pushed and its PR opened against `main` (or, if one is
+- [x] The branch pushed and its PR opened against `main` (or, if one is
   already open for this branch, its body brought up to date) with the
   title `chore: dependabot and security policy`, a body naming this plan,
   what changed and why, and the checks run with their result. The PR's

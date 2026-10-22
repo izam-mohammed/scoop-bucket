@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-labelledby="t d">
+  <title id="t">scoop-bucket</title>
+  <desc id="d">An ice cream parlour with one giant strawberry scoop on a waffle cone: software for Windows, served by the scoop, with exactly one flavour on the menu and a stamp saying it was restocked by a robot.</desc>
+  <defs>
+    <pattern id="waffle" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0 H22 M0 0 V22" stroke="#a8722f" stroke-width="3" fill="none"/>
+    </pattern>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f472b6" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="400" rx="24" fill="#12100f"/>
+  <circle cx="250" cy="200" r="200" fill="url(#glow)"/>
+
+  <!-- the hero: one scoop, one cone -->
+  <path d="M160 222 L340 222 L250 344 Z" fill="#d9a55b"/>
+  <path d="M160 222 L340 222 L250 344 Z" fill="url(#waffle)"/>
+  <circle cx="250" cy="160" r="96" fill="#f472b6"/>
+  <path d="M162 196 L338 196 L338 214 Q334 232 326 222 Q320 214 312 226 L312 262 Q306 276 298 262 L298 236 Q290 226 280 238 Q272 246 262 236 Q252 228 244 240 L244 290 Q236 304 228 290 L228 240 Q218 230 208 240 Q200 248 192 236 L192 258 Q186 270 180 258 L180 230 Q168 230 162 214 Z" fill="#f472b6"/>
+  <circle cx="218" cy="122" r="18" fill="#fce7f3" opacity="0.55"/>
+  <g fill="#fef3c7">
+    <rect x="262" y="104" width="14" height="5" rx="2.5" transform="rotate(30 269 106)"/>
+    <rect x="292" y="146" width="14" height="5" rx="2.5" transform="rotate(-25 299 148)"/>
+    <rect x="236" y="176" width="14" height="5" rx="2.5" transform="rotate(70 243 178)"/>
+    <rect x="196" y="160" width="14" height="5" rx="2.5" transform="rotate(-50 203 162)"/>
+    <rect x="276" y="190" width="14" height="5" rx="2.5" transform="rotate(15 283 192)"/>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace">
+    <!-- the stamp -->
+    <circle cx="398" cy="300" r="46" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="398" y="292" font-size="12" text-anchor="middle" fill="#9ca3af">restocked</text>
+    <text x="398" y="310" font-size="12" text-anchor="middle" fill="#9ca3af">by a robot</text>
+
+    <!-- the pitch -->
+    <text x="480" y="96" font-size="17" fill="#8f8a86">PS&gt; scoop install claim</text>
+    <text x="478" y="168" font-size="64" font-weight="700" fill="#fafaf9">scoop-bucket</text>
+    <text x="480" y="218" font-size="21" fill="#d6d3d1">Software for Windows, served by the scoop.</text>
+    <text x="480" y="252" font-size="21" fill="#a8a29e">Flavours available: 1. Choose wisely.</text>
+
+    <rect x="480" y="284" width="600" height="52" rx="12" fill="#1c1917" stroke="#3a3532"/>
+    <text x="502" y="316" font-size="15" fill="#8f8a86">today's menu:</text>
+    <text x="634" y="316" font-size="15" font-weight="700" fill="#f9a8d4">claim</text>
+    <text x="692" y="316" font-size="15" fill="#d6d3d1">(un-credits the uninvited co-author)</text>
+  </g>
+</svg>
